@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 25% 20% 27.5% 27.5%;
+    grid-template-rows: 10% 38% 24% 28%;
+    grid-template-areas: "nav nav nav nav"
+                         "hero1 hero1 aside1 aside2"
+                         "hero2 hero2 aside3 aside3"
+                         "hero2 hero2 aside4 aside5";
+}
+
+.section {
+    background-color: aquamarine;
+    border: 4px solid white;
+    border-radius: 40px;
+}
+
+#nav {
+    grid-area: nav;
+}
+
+#hero1 {
+    grid-area: hero1;
+}
+#hero2 {
+    grid-area: hero2;
+}
+#aside1 {
+    grid-area: aside1;
+}
+#aside2 {
+    grid-area: aside2;
+}
+#aside3 {
+    grid-area: aside3;
+}
+#aside4 {
+    grid-area: aside4;
+}
+#aside5 {
+    grid-area: aside5;
+}
+

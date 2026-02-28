@@ -1,0 +1,156 @@
+@font-face {
+    font-family: edit;
+    src: url(./jizHRFtNs2ka5fXjeivQ4LroWlx-6zAjjH7M.woff2);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+}
+
+#nav {
+    height: 90px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+}
+
+#nav h2 {
+    font-size: 22px;
+    color: black;
+}
+
+#nav #links {
+    display: flex;
+    gap: 36px;
+}
+
+#nav #links a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#nav #links a:hover {
+    color: grey;
+}
+
+#nav button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: #000;
+    border: 2px solid black;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#nav button:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#nav button i{
+    margin-left: 6px;
+    font-size: 20px;
+}
+
+#center {
+    height: calc(100% - 90px);
+    width: 100%;
+    background-color: #fff;
+}
+
+#text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+}
+
+#text h4 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    font-family: edit;
+    font-weight: 500;
+}
+
+#text h1 {
+    font-size: 68px;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+#text p {
+    color: #888;
+    font-size: 16px;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+#text button {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 14px 28px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 50px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+#text button:hover {
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#text button i{
+    margin-left: 10px;
+    font-size: 24px;
+}
+
+img{
+    height: 500px;
+    position: absolute;
+    left: 48%;
+    transform: translate(-50%);
+    z-index: 9;
+}
+
+#gradient {
+    height: 36%;
+    width: 100%;
+    margin: 0 -10px;
+    background: linear-gradient(to right bottom, rgb(255, 182, 48), rgb(255, 51, 133), rgb(197, 0, 175));
+    filter: blur(100px);
+    position: absolute;
+    top: 80%;
+    opacity: 0.8;
+    rotate: -3deg;
+}

@@ -1,0 +1,136 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: gilroy;
+  }
+
+  html,
+  body {
+      height: 100%;
+      width: 100%;
+  }
+
+  main {
+      height: 100%;
+      width: 100%;
+
+  }
+
+  .page1 {
+      height: 100%;
+      width: 100%;
+      padding: 0 10vmax;
+      color: white;
+      background: linear-gradient(to bottom right, #1A502E, #0F3A26, #194C2D);
+  }
+
+  nav {
+      padding-top: 2vmax;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  nav .nav-left {
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+  }
+    nav .nav-left h4{
+    font-size: 1.2vmax;
+}
+
+  nav .nav-left img {
+      height: 2.5vmax;
+      width: 2.5vmax;
+      border-radius: 50%;    
+  }
+
+  nav .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 3vmax;
+  }
+  nav .nav-center h4{
+    font-size: 1.2vmax;
+}
+
+  nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1vmax;
+  }
+nav .nav-right i{
+    font-size: 1.2vmax;
+}
+  .hero {
+      width: 100%;
+      margin-top: 5vmax;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      /* background-color: red; */
+  }
+
+  .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      /* justify-content: space-between; */
+      gap: 1vmax;
+  }
+
+  .hero-left #cta1 {
+      color: white;
+      background-color: #C68162;
+      padding: 1vmax 1.5vmax;
+      border: 1px solid #C68162;
+      border-radius: 50px;
+  }
+
+  .hero-left #cta1 i {
+      padding: 0.2vmax 0.2vmax;
+      border-radius: 50%;
+      background-color: white;
+      color: #C68162;
+
+  }
+
+  .hero-right {
+      height: 27vmax;
+      width: 21vmax;
+      background-color: white;
+      clip-path: polygon(50% 0%, 83% 7%, 100% 17%, 100% 26%, 100% 100%, 50% 100%, 0 100%, 0 34%, 0 17%, 19% 6%);
+      position: relative;
+  }
+
+  .hero-right img {
+      position: absolute;
+      top: 12%;
+      /* transform: translate(-50%,-50%); */
+      height: 90%;
+      width: 100%;
+      object-fit: cover;
+      object-position: bottom;
+  }
+
+  .bottom {
+      height: 9vmax;
+      width: 100%;
+      padding: 0 4vmax 0 6vmax;
+      display: flex;
+      align-items: center;
+      /* justify-content: space-between; */
+      gap: 5vmax;
+      background-color: #0C3523;
+  }
+
+  .bottom hr {
+      /* margin: 2vmax 0; */
+      height: 7vmax;
+      width: 1px;
+      background-color: grey;
+      border: none;
+  }

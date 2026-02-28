@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#box{
+    width: 600px;
+    height: 600px;
+    background-color: #382727;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 10px;
+    margin: 50px auto;
+}
+#box #winner{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+#box button{
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+}
