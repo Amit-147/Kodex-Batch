@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main
+        class="min-h-screen w-full bg-[url('./assets/bg.png')] bg-cover bg-center text-white flex items-center justify-center">
+        <div class="main-container flex flex-col items-center justify-center gap-8">
+
+            <h1 class="text-6xl font-semibold">DOOM CLOCK</h1>
+
+            <p class="text-2xl">This Clock Will Run Till Eternity!!!</p>
+
+            <!-- Glass / Blur Clock Container -->
+            <div class="clock-container relative w-64 h-64 rounded-full 
+             bg-white/10 backdrop-blur-md border border-white/20 
+             flex items-center justify-center">
+                <!-- Clock Image (White using invert) -->
+                <img class="h-[15rem] invert" src="./assets/clock.png" alt="Clock" />
+
+
+                <!-- Minute Hand -->
+                <div
+                    class="min-hand absolute h-[2px] w-[47%] bg-green-500 rotate-[-90deg] top-1/2 left-1/2 transform -translate-y-1/2 origin-left">
+                </div>
+
+                <!-- Second Hand -->
+                <div
+                    class="sec-hand absolute h-[2px] w-[48.5%] bg-blue-500 rotate-[-90deg] top-1/2 left-1/2 transform -translate-y-1/2 origin-left">
+                </div>
+
+                <!-- Hour Hand -->
+                <div
+                    class="hour-hand absolute h-[3px] w-[33%] bg-green-700 rotate-[-90deg] top-1/2 left-1/2 transform -translate-y-1/2 origin-left">
+                </div>
+
+            </div>
+
+            <div class="digital-clock text-4xl flex gap-4">
+                <span class="hours">00 </span>Hours
+                <span class="minutes">00 </span>Minutes
+                <span class="seconds">00 </span>Seconds
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

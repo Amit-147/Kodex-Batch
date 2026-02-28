@@ -1,0 +1,79 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: gilroy;
+  }
+
+  html,
+  body {
+      height: 100%;
+      width: 100%;
+  }
+
+  main {
+      height: 100%;
+      width: 100%;
+      padding: 2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      gap: 2rem;
+  }
+
+  .card {
+      height: 22vmax;
+      width: 20vmax;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: black;
+      position: relative;
+      cursor: pointer;
+      transition: all ease 0.2s;
+
+  }
+  .card:hover{
+    transform: scale(0.95);
+  }
+
+  .card img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+  }
+
+  .overlay-text {
+      height: 100%;
+      width: 100%;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.122);
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      color: rgb(255, 255, 255);
+  }
+
+  .overlay-text h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1;
+  }
+
+  .overlay-text h2,
+  h3 {
+      color: #F15757;
+  }
+
+  .price {
+      display: flex;
+      align-items: center;
+      gap: 9.5rem;
+      justify-content: center;
+  }

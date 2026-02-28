@@ -1,0 +1,101 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: gilroy;
+      color: white;
+      caret-color: transparent;
+  }
+
+  html,
+  body {
+      height: 100%;
+      width: 100%;
+  }
+
+  main {
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      /* padding: 1rem 2rem; */
+  }
+
+  .center {
+      height: 50%;
+      width: 55%;
+      /* background-color: rebeccapurple; */
+      display: flex;
+      gap: 2.5rem;
+  }
+
+  .left {
+      width: 40%;
+      height: 100%;
+      background: #121212;
+      border-radius: 20px;
+      padding: 1rem;
+
+  }
+
+  .card {
+      width: 100%;
+      border-bottom: 1px solid grey;
+      display: flex;
+      align-items: center;
+      padding-bottom: 0.5rem;
+      padding-top: 1rem;
+      gap: 1rem;
+      cursor: pointer;
+  }
+
+  .card img {
+      height: 3rem;
+      border-radius: 50%;
+      object-position: center;
+      object-fit: cover;
+  }
+
+  .right {
+      width: 60%;
+      height: 100%;
+      background: #0B2222;
+      border-radius: 20px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      gap: 2rem;
+      /* display: none; */
+  }
+
+  .right img {
+      height: 10rem;
+  }
+
+  .progress-container {
+      height: 4px;
+      width: 100%;
+      background-color: grey;
+      border-radius: 50px;
+      overflow: hidden;
+  }
+
+  .progress-bar {
+      height: 4px;
+      width: 1%;
+      background-color: green;
+      border-radius: 50px;
+  }
+
+  .play-btn:active,
+  .bkwrd-btn:active,
+  .frwrd-btn:active {
+      display: inline-block;
+      transform: scale(0.95);
+  }
