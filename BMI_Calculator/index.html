@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BMI Calculator</title>
+<meta name="description"
+    content="Calculate your Body Mass Index (BMI) instantly. Supports metric and imperial units, history tracking, and color-coded health categories." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <h1>BMI <span class="accent">Calculator</span></h1>
+            </div>
+            <p class="subtitle">Know your Body Mass Index in seconds</p>
+        </header>
+
+        <!-- Unit Toggle -->
+        <div class="unit-toggle-wrap">
+            <button id="unitToggleBtn" class="unit-toggle" aria-pressed="false">
+                <span class="toggle-label active-label" id="toggleLabelMetric">Metric (kg/cm)</span>
+                <span class="toggle-track">
+                    <span class="toggle-thumb"></span>
+                </span>
+                <span class="toggle-label" id="toggleLabelImperial">Imperial (lbs/ft)</span>
+            </button>
+        </div>
+
+        <!-- Calculator Card -->
+        <section class="card calculator-card" aria-label="BMI Calculator">
+
+            <!-- Name Input -->
+            <div class="input-group">
+                <label for="userName" class="input-label">Your Name</label>
+                <div class="input-wrapper">
+                    <span class="input-icon">👤</span>
+                    <input type="text" id="userName" class="input-field" placeholder="Enter your name"
+                        autocomplete="off" />
+                </div>
+                <span class="error-msg" id="nameError"></span>
+            </div>
+
+            <!-- Metric Inputs -->
+            <div id="metricInputs">
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="heightCm" class="input-label">Height (cm)</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📏</span>
+                            <input type="number" id="heightCm" class="input-field" placeholder="e.g. 175" min="1"
+                                step="0.1" />
+                            <span class="unit-badge">cm</span>
+                        </div>
+                        <span class="error-msg" id="heightError"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="weightKg" class="input-label">Weight (kg)</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">⚖️</span>
+                            <input type="number" id="weightKg" class="input-field" placeholder="e.g. 70" min="1"
+                                step="0.1" />
+                            <span class="unit-badge">kg</span>
+                        </div>
+                        <span class="error-msg" id="weightError"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imperial Inputs -->
+            <div id="imperialInputs" class="hidden">
+                <div class="input-row imperial-height-row">
+                    <div class="input-group">
+                        <label for="heightFt" class="input-label">Height (ft)</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📏</span>
+                            <input type="number" id="heightFt" class="input-field" placeholder="e.g. 5" min="1"
+                                step="1" />
+                            <span class="unit-badge">ft</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="heightIn" class="input-label">Inches</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📐</span>
+                            <input type="number" id="heightIn" class="input-field" placeholder="e.g. 9" min="0" max="11"
+                                step="1" />
+                            <span class="unit-badge">in</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="error-msg" id="heightImperialError"></span>
+
+                <div class="input-group">
+                    <label for="weightLbs" class="input-label">Weight (lbs)</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">⚖️</span>
+                        <input type="number" id="weightLbs" class="input-field" placeholder="e.g. 154" min="1"
+                            step="0.1" />
+                        <span class="unit-badge">lbs</span>
+                    </div>
+                    <span class="error-msg" id="weightImperialError"></span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="btn-row">
+                <button id="calculateBtn" class="btn btn-primary">
+                    <span class="btn-icon">🧮</span> Calculate BMI
+                </button>
+                <button id="clearBtn" class="btn btn-secondary">
+                    <span class="btn-icon">🗑️</span> Reset
+                </button>
+            </div>
+
+        </section>
+
+        <!-- Result Card -->
+        <section class="card result-card hidden" id="resultCard" aria-live="polite" aria-label="BMI Result">
+            <div class="result-header">
+                <span class="result-name" id="resultName"></span>
+                <span class="result-date" id="resultDate"></span>
+            </div>
+
+            <div class="bmi-display">
+                <div class="bmi-ring" id="bmiRing">
+                    <svg viewBox="0 0 120 120" class="ring-svg">
+                        <circle cx="60" cy="60" r="52" class="ring-track" />
+                        <circle cx="60" cy="60" r="52" class="ring-progress" id="ringProgress" />
+                    </svg>
+                    <div class="bmi-number-wrap">
+                        <span class="bmi-number" id="bmiValue">--</span>
+                        <span class="bmi-unit-label">BMI</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-badge" id="categoryBadge">
+                <span class="category-dot" id="categoryDot"></span>
+                <span class="category-text" id="categoryText">--</span>
+            </div>
+
+            <!-- BMI Scale -->
+            <div class="bmi-scale">
+                <div class="scale-bar">
+                    <div class="scale-segment underweight" title="Underweight"></div>
+                    <div class="scale-segment normal" title="Normal"></div>
+                    <div class="scale-segment overweight" title="Overweight"></div>
+                    <div class="scale-segment obese" title="Obese"></div>
+                    <div class="scale-marker" id="scaleMarker"></div>
+                </div>
+                <div class="scale-labels">
+                    <span>Underweight</span>
+                    <span>Normal</span>
+                    <span>Overweight</span>
+                    <span>Obese</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- History Section -->
+        <section class="card history-card" id="historyCard" aria-label="BMI History">
+            <div class="history-header">
+                <h2 class="section-title">📋 History</h2>
+                <button id="clearHistoryBtn" class="btn-ghost" aria-label="Clear all history">Clear All</button>
+            </div>
+            <ul class="history-list" id="historyList">
+                <li class="history-empty" id="historyEmpty">No records yet. Calculate your BMI to get started!</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
